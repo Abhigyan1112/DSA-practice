@@ -8,6 +8,7 @@ class mergeSort{
             A[i]=sc.nextInt();
         }
         System.out.println(Arrays.toString(Sort(A)));   //printing the return statement of Sort function in String form
+        sc.close();
     }
     static int[] Sort(int[] A){     //merge sort function which sorts the first half of the array then the second half of the array and then combines them
         if(A.length==1){    // base condition returns array if it has only one element

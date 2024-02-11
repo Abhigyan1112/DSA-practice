@@ -91,6 +91,31 @@ public class LL{
         }
         temp.next=temp.next.next;
     }
+    public void insertRec(int val,int index){
+        head=insertRec(val,index,head);
+    }
+    private Node insertRec(int value,int index,Node temp){
+        if(index==0){
+            Node newnode=new Node(value);
+            newnode.next=temp;
+            size++;
+            return newnode;
+        }
+        temp.next=insertRec(value,index-1,temp.next);
+        return temp;
+    }
+    public void reverseTheList(){
+        tail=reverseTheList(head);
+        tail.next=null;
+    }
+    private Node reverseTheList(Node temp){
+        if(temp==tail){
+            head=temp;
+            return temp;
+        }
+        reverseTheList(temp.next).next=temp;
+        return temp;
+    }
     Node head;
     Node tail;
     int size=0;

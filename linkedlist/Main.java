@@ -42,7 +42,6 @@ public class Main {
             list.Insert(a);
             a=sc.nextInt();
         }
-        list.print();
         list.reverseTheList();
         list.print();
         sc.close();

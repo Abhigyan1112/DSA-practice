@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SegmentTrees",
+            "request": "launch",
+            "mainClass": "Trees.SegmentTrees",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Trees.Main",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "mergeSort",
+            "request": "launch",
+            "mainClass": "mergeSort",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "QueueMain",
+            "request": "launch",
+            "mainClass": "Queue.QueueMain",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "StackMain",
+            "request": "launch",
+            "mainClass": "StackMain",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "TicTacToe.Main",
+            "projectName": "DSA-practice_b2d7c194"
+        },
+        {
+            "type": "java",
+            "name": "quickSort",
+            "request": "launch",
+            "mainClass": "quickSort",
+            "projectName": "DSA-practice_b2d7c194"
+        }
+    ]
+}

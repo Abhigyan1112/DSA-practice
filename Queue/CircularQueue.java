@@ -1,8 +1,8 @@
 package Queue;
 
 public class CircularQueue extends CustomQueue{
-    private int front=0;
-    private int size=0;
+    int front=0;
+    int size=0;
     CircularQueue(){
         super();
     }

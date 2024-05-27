@@ -11,6 +11,7 @@ public class quickSort {
         }
         Sort(A,0,N-1);
         System.out.println(Arrays.toString(A));
+        sc.close();
     }
     static void Sort(int[] A,int low, int high){
         if(low>=high){

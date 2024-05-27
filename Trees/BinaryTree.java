@@ -3,7 +3,7 @@ package Trees;
 import java.util.Scanner;
 
 public class BinaryTree{
-    private class Node{
+    private class Node{     // Node class
         Node left;
         Node right;
         int value;
@@ -11,7 +11,7 @@ public class BinaryTree{
             this.value=value;
         }
     }
-    private Node root;
+    private Node root; 
 
     //to insert items in to the tree
     public void insert(Scanner sc){
@@ -19,7 +19,7 @@ public class BinaryTree{
         root=new Node(sc.nextInt());
         populate(sc, root);
     }
-    private void populate(Scanner sc,Node node){
+    private void populate(Scanner sc,Node node){    //to fill tree with as many number of nodes
         System.out.println("Do you want to insert to the left of the node: "+node.value);
         if(sc.nextBoolean()){
             System.out.println("Enter the value");
@@ -33,10 +33,12 @@ public class BinaryTree{
             populate(sc,node.right);
         }
     }
+
+
     public void display(){
         display(root," ");
     }
-    private void display(Node node,String indent){
+    private void display(Node node,String indent){  
         if(node==null){
             return;
         }
@@ -44,7 +46,9 @@ public class BinaryTree{
         display(node.left,indent+"\t");
         display(node.right,indent+"\t");
     }
-    public void prettyDisplay(){
+
+
+    public void prettyDisplay(){    //to display the tree in a pretty method
         prettyDisplay(root,0);
     }
     private void prettyDisplay(Node node,int level){
@@ -62,5 +66,42 @@ public class BinaryTree{
             System.out.println(node.value);
         }
         prettyDisplay(node.left, level+1);
+    }
+
+
+    public void preOrder(){     //Node-Left-Right       print
+        preOrder(root);
+    }
+    public void preOrder(Node node){
+        if(node==null){
+            return ;
+        }
+        System.out.print(node.value+" ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void inOrder(){      //Left-Node-Right       print
+        inOrder(root);
+    }
+    public void inOrder(Node node){
+        if(node==null){
+            return ;
+        }
+        inOrder(node.left);
+        System.out.print(node.value+" ");
+        inOrder(node.right);
+    }
+
+    public void postOrder(){        //Left-Right-Node       print
+        postOrder(root);
+    }
+    public void postOrder(Node node){
+        if(node==null){
+            return ;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.value+" ");
     }
 }

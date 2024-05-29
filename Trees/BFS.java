@@ -30,4 +30,20 @@ public class BFS extends BinarySearchTree{
         }
         return ans;
     }
+    public Node findSuccessNode(int key){
+        if(root==null){
+            return null;
+        }
+        Queue<Node> queue=new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            Node curNode=queue.poll();
+            if(curNode.left!=null) queue.add(curNode.left);
+            if(curNode.right!=null) queue.add(curNode.right);
+            if(curNode.value==key){
+                return queue.poll();
+            }
+        }
+        return null;
+    }
 }

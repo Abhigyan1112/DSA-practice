@@ -16,5 +16,6 @@ public class Main {
         BT.populatedSorted(nums);
         BT.display();
         System.out.println(BT.breadthsearch());
+        sc.close();
     }
 }

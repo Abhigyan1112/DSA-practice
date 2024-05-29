@@ -7,26 +7,26 @@ import java.util.Queue;
 
 public class BFS extends BinarySearchTree{
     public List<List<Integer>> breadthsearch(){
-        List<List<Integer>> ans=new ArrayList<>();
+        List<List<Integer>> ans=new ArrayList<>();  //creating a list of lists to store the nodes at every level
         if(root==null){
             return ans;
         }
-        Queue<Node> queue=new LinkedList<>();
-        queue.add(root);
+        Queue<Node> queue=new LinkedList<>();   //Breadth First search uses a queue to store the children of the current node and the pass the current node
+        queue.add(root);    //first add the root node as it is not child to any node
         while(!queue.isEmpty()){
-            int levelSize=queue.size();
-            List<Integer> currentlist=new ArrayList<>(levelSize);
+            int levelSize=queue.size(); // at every level, the size of the queue would be equal to the number of nodes at that level
+            List<Integer> currentlist=new ArrayList<>(levelSize);   
             for(int i=0;i<levelSize;i++){
-                Node currentNode=queue.poll();
-                currentlist.add(currentNode.value);
+                Node currentNode=queue.poll();  
+                currentlist.add(currentNode.value);    //adds the nodes of the current node to the current list
                 if(currentNode.left!=null){
                     queue.add(currentNode.left);
                 }
                 if(currentNode.right!=null){
-                    queue.add(currentNode.right);
-                }
+                    queue.add(currentNode.right);   
+                }                                       //adds the children of the current node to the queue
             }
-            ans.add(currentlist);
+            ans.add(currentlist);      //after completion of every level, adds the nodes of the level(the list) to the answer list
         }
         return ans;
     }

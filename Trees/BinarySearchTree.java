@@ -2,16 +2,16 @@ package Trees;
 
 public class BinarySearchTree {
     public class Node{
-        private int height;
-        private int value;
-        private Node right;
-        private Node left;
+        public int height;
+        public int value;
+        public Node right;
+        public Node left;
 
         Node(int value){
             this.value=value;
         }
     }
-    private Node root;
+    public Node root;
     public int height(Node node){
         if(node==null){
             return -1;

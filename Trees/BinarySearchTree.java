@@ -72,4 +72,8 @@ public class BinarySearchTree {
         display(node.left,"The left child of "+node.value+" is: ");
         display(node.right,"The right child of "+node.value+" is: ");
     }
+    public void buildTree(int[] preorder, int[] inorder) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buildTree'");
+    }
 }

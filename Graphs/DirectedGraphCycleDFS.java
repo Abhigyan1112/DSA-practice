@@ -1,5 +1,5 @@
 import java.util.*;
-public class DirectedGraphCycle extends Solution{
+public class DirectedGraphCycleDFS extends Solution{
     public static void main(String args[]){
     }
 }

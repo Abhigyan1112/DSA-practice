@@ -1,38 +1,41 @@
-
 import java.util.*;
-class Dijkstras
-{
-    //Function to find the shortest distance of all the vertices
-    //from the source vertex S.
-    static class Pair{
-        int node,distance;
-        Pair(int node,int distance){
+public class Dijkstras extends Solution{
+    public static void main(String[] args) {
+        
+    }
+}
+// Can be done with PriorityQueue, Queue or Set, Set also stores in ascending order.
+class Solution {
+    class Pair{
+        int node;
+        int dist;
+        Pair(int node,int dist){
             this.node=node;
-            this.distance=distance;
+            this.dist=dist;
         }
     }
-    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
-    {
-        PriorityQueue<Pair> queue=new PriorityQueue<>((a,b) -> a.distance-b.distance);
-        
-        int dist[]=new int[V];
-        Arrays.fill(dist,Integer.MAX_VALUE);
-        queue.add(new Pair(S,0));
-        dist[S]=0;
+    public int[] dijkstra(int V, int[][] edges, int src) {
+        ArrayList<ArrayList<Pair>> adj = new ArrayList<ArrayList<Pair>>();
+        PriorityQueue<Pair> queue=new PriorityQueue<Pair>((x,y) -> x.dist-y.dist);
+        for(int i=0;i<V;i++){
+            adj.add(new ArrayList<Pair>());
+        }
+        for(int i=0;i<edges.length;i++){
+            adj.get(edges[i][0]).add(new Pair(edges[i][1],edges[i][2]));
+        }
+        int[] min=new int[V];
+        Arrays.fill(min,Integer.MAX_VALUE);
+        min[src]=0;
+        queue.add(new Pair(src,0));
         while(!queue.isEmpty()){
-            int distance=queue.peek().distance;
-            int node=queue.peek().node;
-            int length=adj.get(node).size();
-            queue.poll();
-            for(int i=0;i<length;i++){
-                int adjNode=adj.get(node).get(i).get(0);
-                int edge=adj.get(node).get(i).get(1);
-                if(distance+edge<dist[adjNode]){
-                    dist[adjNode]=distance+edge;
-                    queue.add(new Pair(adjNode,dist[adjNode]));
+            Pair temp=queue.poll();
+            for(Pair neigh : adj.get(temp.node)){
+                if(min[neigh.node]>temp.dist+neigh.dist){
+                    min[neigh.node]=temp.dist+neigh.dist;
+                    queue.add(new Pair(neigh.node,min[neigh.node]));
                 }
             }
         }
-        return dist;
+        return min;
     }
 }

@@ -1,5 +1,5 @@
 import java.util.*;
-public class Undirected_Graph_Cycle extends Solution{
+public class UndirectedGraphCycle extends Solution{
     public static void main(String args[]){
 
     }

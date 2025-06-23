@@ -6,6 +6,7 @@ public class BellmanFord extends Solution{
     }
 }
 // User function Template for Java
+// iterate over all edges n-1 times and keep updating the minimum cost array, if the array changes for the nth time, negative cycle is present
 
 class Solution {
     public int[] bellmanFord(int V, int[][] edges, int src) {
